@@ -10,6 +10,8 @@ namespace OrderTracker.Models
     public int BreadTotal { get; set ;}
     public int PastryTotal { get; set; }
     public int TotalPrice { get; set; }
+    public int Id { get; }
+    private static List<Order> _instances = new List<Order> { };
   
     public Order(string date, int whiteBread, int wheatBread, int sourdough, int pastries)
     {
@@ -19,6 +21,22 @@ namespace OrderTracker.Models
       BreadTotal = BreadOrder.TotalPrice();
       PastryTotal = PastryOrder.TotalPrice();
       TotalPrice = BreadTotal + PastryTotal;
+      _instances.Add(this);
+    }
+
+    public static List<Order> GetAll()
+    {
+      return _instances;
+    }
+
+    public static void ClearAll()
+    {
+      _instances.Clear();
+    }
+
+    public static Order Find(int searchId)
+    {
+      return _instances[searchId-1];
     }
   }
 }

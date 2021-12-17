@@ -33,8 +33,8 @@ namespace OrderTracker.Controllers
       Dictionary<string, object> model = new Dictionary<string, object>();
       Vendor foundVendor = Vendor.Find(vendorId);
       Order newOrder = new Order(date, whiteBread, wheatBread, sourdough, pastries);
-      foundVendor.AddItem(newOrder);
-      List<Item> vendorOrders = foundVendor.Orders;
+      foundVendor.AddOrder(newOrder);
+      List<Order> vendorOrders = foundVendor.Orders;
       model.Add("orders", vendorOrders);
       model.Add("vendor", foundVendor);
       return View("Show", model);
