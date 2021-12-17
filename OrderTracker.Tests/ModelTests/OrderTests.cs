@@ -152,5 +152,19 @@ namespace OrderTracker.Tests
     //Assert
     Assert.AreEqual(0, result);
     }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectOrder_Order()
+    {
+    //Arrange
+    Order order1 = new Order("1/1/21", 3, 2, 1, 3);
+    Order order2 = new Order("1/2/21", 0, 0, 0, 0);
+
+    //Act
+    Order result = Order.Find(1);
+
+    //Assert
+    Assert.AreEqual(order2, result);
+    }
   }
 }
