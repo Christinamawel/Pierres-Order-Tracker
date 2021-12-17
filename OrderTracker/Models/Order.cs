@@ -9,7 +9,7 @@ namespace OrderTracker.Models
     public Pastry PastryOrder { get; set; }
     public int BreadTotal { get; set ;}
     public int PastryTotal { get; set; }
-    public int Price { get; set; }
+    public int TotalPrice { get; set; }
   
     public Order(string date, int whiteBread, int wheatBread, int sourdough, int pastries)
     {
@@ -18,6 +18,7 @@ namespace OrderTracker.Models
       PastryOrder = new Pastry(pastries);
       BreadTotal = BreadOrder.TotalPrice();
       PastryTotal = PastryOrder.TotalPrice();
+      TotalPrice = 0;
     }
   }
 }
