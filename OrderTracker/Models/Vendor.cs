@@ -16,5 +16,15 @@ namespace OrderTracker.Models
       Id = 5;
       Orders = new List<Order> {};
     }
+
+    public static List<Vendor> GetAll()
+    {
+      return _instances;
+    }
+
+    public static void ClearAll()
+    {
+    _instances.Clear();
+    }
   }
 }
