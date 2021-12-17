@@ -33,7 +33,6 @@ namespace OrderTracker.Tests
     public void GetBreadOrder_ReturnsBreadObject_Bread()
     {
       //Arrange
-      Bread breadOrder = new Bread( 3, 2, 1);
       Order newOrder = new Order("1/1/21", 3, 2, 1, 0);
 
       //Act
@@ -51,7 +50,6 @@ namespace OrderTracker.Tests
     public void GetPastryOrder_ReturnsPastryObject_Pastry()
     {
       //Arrange
-      Pastry pastryOrder = new Pastry(3);
       Order newOrder = new Order("1/1/21", 3, 2, 1, 3);
 
       //Act
@@ -59,6 +57,21 @@ namespace OrderTracker.Tests
 
       //Assert
       Assert.AreEqual(pastries, 3);
+    }
+
+    [TestMethod]
+    public void GetbreadTotal_ReturnsTotalBreadPrice_Int()
+    {
+      //Arrange
+      Order newOrder = new Order("1/1/21", 3, 2, 1, 3);
+      Bread newBreadOrder = new Bread(3, 2, 1);
+
+      //Act
+      int totalBreadPrice = newBreadOrder.TotalPrice();
+      int result = newOrder.BreadTotal;
+
+      //Assert
+      Assert.AreEqual(totalBreadPrice, result);
     }
   }
 }
