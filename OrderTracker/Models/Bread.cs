@@ -1,4 +1,4 @@
-namespace BreadOrder.Models
+namespace OrderTracker.Models
 {
   public class Bread
   {

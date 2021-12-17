@@ -1,4 +1,4 @@
-namespace PastryOrder.Models
+namespace OrderTracker.Models
 {
   public class Pastry
   {
