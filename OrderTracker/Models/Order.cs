@@ -22,6 +22,7 @@ namespace OrderTracker.Models
       PastryTotal = PastryOrder.TotalPrice();
       TotalPrice = BreadTotal + PastryTotal;
       _instances.Add(this);
+      Id = _instances.Count - 1;
     }
 
     public static List<Order> GetAll()

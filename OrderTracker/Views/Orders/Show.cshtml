@@ -1,14 +1,14 @@
 <h1>Order Details: </h1>
-<h3>Category: @Model["vendor"].Name</h3>
+<h3>Vendor: @Model["vendor"].Name</h3>
 
-<h2>@Model["item"].Date</h2>
-<h3>White Bread: @Model["item"].BreadOrder.WhiteBread</h3>
-<h3>Wheat Bread: @Model["item"].BreadOrder.WheatBread</h3>
-<h3>Sourdough Bread: @Model["item"].BreadOrder.Sourdough</h3>
-<h3>Pastries: @Model["item"].PastryOrder.Amount</h3>
-<h3 class="margin-top">Total Bread Cost: @Model["item"].BreadTotal</h3>
-<h3>Total Pastry Cost: @Model["item"].PastryTotal</h3>
-<h2>Total Order Cost: @Model["item"].TotalPrice</h2>
+<h2>@Model["order"].Date</h2>
+<h3>White Bread: @Model["order"].BreadOrder.WhiteBread</h3>
+<h3>Wheat Bread: @Model["order"].BreadOrder.WheatBread</h3>
+<h3>Sourdough Bread: @Model["order"].BreadOrder.Sourdough</h3>
+<h3>Pastries: @Model["order"].PastryOrder.Amount</h3>
+<h3 class="margin-top">Total Bread Cost: $@Model["order"].BreadTotal</h3>
+<h3>Total Pastry Cost: $@Model["order"].PastryTotal</h3>
+<h2>Total Order Cost: $@Model["order"].TotalPrice</h2>
 
 
 <a href='/vendors/@Model["vendor"].Id/orders/new'>Add another Order</a>
