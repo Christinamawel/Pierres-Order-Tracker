@@ -15,6 +15,7 @@ namespace OrderTracker.Models
     {
       Date = date;
       BreadOrder = new Bread(whiteBread, wheatBread, sourdough);
+      PastryOrder = new Pastry(0);
     }
   }
 }
