@@ -60,7 +60,7 @@ namespace OrderTracker.Tests
     }
 
     [TestMethod]
-    public void GetbreadTotal_ReturnsTotalBreadPrice_Int()
+    public void GetBreadTotal_ReturnsTotalBreadPrice_Int()
     {
       //Arrange
       Order newOrder = new Order("1/1/21", 3, 2, 1, 3);
@@ -72,6 +72,21 @@ namespace OrderTracker.Tests
 
       //Assert
       Assert.AreEqual(totalBreadPrice, result);
+    }
+
+    [TestMethod]
+    public void GetPastryTotal_ReturnsTotalPastryPrice_Int()
+    {
+      //Arrange
+      Order newOrder = new Order("1/1/21", 3, 2, 1, 3);
+      Pastry newPastryOrder = new Pastry(3);
+
+      //Act
+      int totalPastryPrice = newPastryOrder.TotalPrice();
+      int result = newOrder.PastryTotal;
+
+      //Assert
+      Assert.AreEqual(totalPastryPrice, result);
     }
   }
 }
