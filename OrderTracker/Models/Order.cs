@@ -17,7 +17,7 @@ namespace OrderTracker.Models
       BreadOrder = new Bread(whiteBread, wheatBread, sourdough);
       PastryOrder = new Pastry(pastries);
       BreadTotal = BreadOrder.TotalPrice();
-      PastryTotal = 0;
+      PastryTotal = PastryOrder.TotalPrice();
     }
   }
 }
