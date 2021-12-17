@@ -28,5 +28,23 @@ namespace OrderTracker.Tests
       //Assert
       Assert.AreEqual(date, result);
     }
+
+    [TestMethod]
+    public void GetBread_ReturnsBreadObject_Bread()
+    {
+      //Arrange
+      Bread breadOrder = new Bread( 3, 2, 1);
+      Order newOrder = new Order("1/1/21", 3, 2, 1, 0);
+
+      //Act
+      int whiteBread = newOrder.BreadOrder.WhiteBread;
+      int wheatBread = newOrder.BreadOrder.WheatBread;
+      int sourdough = newOrder.BreadOrder.Sourdough;
+
+      //Assert
+      Assert.AreEqual(whiteBread, 3);
+      Assert.AreEqual(wheatBread, 2);
+      Assert.AreEqual(sourdough, 1);
+    }
   }
 }
