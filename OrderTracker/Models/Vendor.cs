@@ -13,7 +13,7 @@ namespace OrderTracker.Models
     {
       Name = name;
       _instances.Add(this);
-      Id = _instances.Count;
+      Id = 5;
       Orders = new List<Order> {};
     }
   }
