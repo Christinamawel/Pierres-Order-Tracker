@@ -139,5 +139,18 @@ namespace OrderTracker.Tests
       //Assert
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void GetId_OrdersInstantiateWithAnIdAndGetterReturns_Int()
+    {
+    //Arrange
+    Order order1 = new Order("1/1/21", 3, 2, 1, 3);
+
+    //Act
+    int result = order1.Id;
+
+    //Assert
+    Assert.AreEqual(0, result);
+    }
   }
 }
