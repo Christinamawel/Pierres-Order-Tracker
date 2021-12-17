@@ -124,5 +124,20 @@ namespace OrderTracker.Tests
       // Assert
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsOrders_OrderList()
+    {
+      //Arrange
+      Order order1 = new Order("1/1/21", 3, 2, 1, 3);
+      Order order2 = new Order("1/2/21", 0, 0, 0, 0);
+      List<Order> newList = new List<Order> { order1, order2 };
+
+      //Act
+      List<Order> result = Order.GetAll();
+
+      //Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
