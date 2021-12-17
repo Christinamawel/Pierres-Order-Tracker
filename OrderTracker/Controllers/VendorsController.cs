@@ -7,35 +7,48 @@ namespace OrderTracker.Controllers
 {
     public class VendorsController : Controller
     {
-      [HttpGet("/Vendors")]
+      [HttpGet("/vendors")]
       public ActionResult Index()
       {
-        return View();
+        List<Vendor> listOfVendors = Vendor.GetAll();
+        return View(listOfVendors);
       }
 
-      [HttpPost("/Vendors")]
-      public ActionResult Create()
+      [HttpPost("/vendors")]
+      public ActionResult Create(string name)
+      {
+        Vendor newVendor = new Vendor(name);
+        return RedirectToAction("Index");
+      }
+
+      [HttpGet("/vendors/new")]
+      public ActionResult New()
       {
         return View();
       }
 
-      [HttpGet("/Vendors/new")]
-      public ActionResult New(string vendorName)
+      [HttpPost("/vendors/{vendorId}/orders")]
+      public ActionResult Create(int vendorId, string date, int whiteBread, int wheatBread, int sourdough, int pastries)
       {
-        return View();
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Vendor foundVendor = Vendor.Find(vendorId);
+      Order newOrder = new Order(date, whiteBread, wheatBread, sourdough, pastries);
+      foundVendor.AddItem(newOrder);
+      List<Item> vendorOrders = foundVendor.Orders;
+      model.Add("orders", vendorOrders);
+      model.Add("vendor", foundVendor);
+      return View("Show", model);
       }
 
-      // [HttpPost("Vendors/{vendorId}/Orders")]
-      // public ActionResult Create()
-      // {
-
-      //   return View();
-      // }
-
-      [HttpGet("Vendors/{id}")]
-      public ActionResult Show()
+      [HttpGet("vendors/{id}")]
+      public ActionResult Show(int id)
       {
-        return View();
+        Dictionary<string, object> model = new Dictionary<string, object>();
+        Vendor selectedVendor = Vendor.Find(id);
+        List<Order> vendorOrders = selectedVendor.Orders;
+        model.Add("vendor", selectedVendor);
+        model.Add("orders", vendorOrders);
+        return View(model);
       }
 
     }
