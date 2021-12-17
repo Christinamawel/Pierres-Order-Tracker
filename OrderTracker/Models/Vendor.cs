@@ -31,5 +31,10 @@ namespace OrderTracker.Models
     {
       return _instances[searchId];
     }
+
+    public void AddOrder(Order order)
+    {
+      Orders.Add(order);
+    }
   }
 }
