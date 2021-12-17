@@ -1,5 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PastryOrder.Models;
+using OrderTracker.Models;
 using System;
 
 namespace OrderTracker.Tests

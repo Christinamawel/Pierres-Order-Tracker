@@ -1,12 +1,12 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ToDoList.Models;
+using OrderTracker.Models;
 using System.Collections.Generic;
 using System;
 
 namespace OrderTracker.Tests
 {
   [TestClass]
-  public class PastryTests
+  public class VendorTests
   {
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
