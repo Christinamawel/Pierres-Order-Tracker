@@ -1,3 +1,7 @@
+@{
+  Layout = "_Layout";
+}
+
 @using OrderTracker.Models;
 
 <h1>Vendors</h1>
@@ -9,8 +13,10 @@
 
 @foreach (Vendor vendor in Model)
 {
-  <h3><a href='/vendors/@vendor.Id'>@vendor.Name</a></h3>
+  <h3><a class="name-link" href='/vendors/@vendor.Id'>@vendor.Name</a></h3>
 }
 
-<h3><a href="/Vendors/new">Add New Vendor</a><h3>
+<div id="vendor-container">
+<h3 class="vendor-index"><a href="/Vendors/new">Add New Vendor</a><h3>
 <p><a href='/'>Back home</a></p>
+</div>
