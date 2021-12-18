@@ -20,11 +20,11 @@ _A project made for week two of the C# course for Epicodus School, used to demon
 ## Setup/Installation Requirements
 
 * Clone this repository to your Desktop
-* Navigate to 'Pierrs-Bakery/Bakery' in a terminal of your choice
+* Navigate to 'Pierres-Order-Tracker/OrderTracker' in a terminal of your choice
 * type dotnet run
 
 Note: this project was used to showcase knowledge of TDD as well as C# knowledge. to view tests:
-* navigate to 'Pierrs-Bakery/Bakery.Tests' in a terminal of your choice
+* navigate to 'Pierrs-Order-Tracker/OrderTracker.Tests' in a terminal of your choice
 * type dotnet restore
 * type dotnet test
 
